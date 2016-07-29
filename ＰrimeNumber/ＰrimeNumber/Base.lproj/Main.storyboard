@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_rimeNumber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prime Number " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOF-VO-Myz">
+                                <rect key="frame" x="236.5" y="86" width="127.5" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="16"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j4i-If-Jys">
+                                <rect key="frame" x="251.5" y="161" width="97" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="gsK-XW-nGK"/>
+                                </constraints>
+                                <color key="textColor" red="0.19691170299999999" green="0.88878984900000002" blue="0.45918099829999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-Oo-57L">
+                                <rect key="frame" x="238.5" y="216" width="123" height="30"/>
+                                <state key="normal" title="Give me ANSWER">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doThePrimeTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8RP-FY-ny7"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfA-dW-mHP">
+                                <rect key="frame" x="279" y="247" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a number to test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSn-BT-P5k">
+                                <rect key="frame" x="215" y="112.5" width="170.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19691170299999999" green="0.61658452180000001" blue="0.45918099829999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cfA-dW-mHP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0rW-qs-Oi7"/>
+                            <constraint firstItem="eOF-VO-Myz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="66" id="1IE-pC-33W"/>
+                            <constraint firstItem="j4i-If-Jys" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AKF-Yr-3Yv"/>
+                            <constraint firstItem="Tg9-Oo-57L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dqj-R4-sr5"/>
+                            <constraint firstItem="cfA-dW-mHP" firstAttribute="top" secondItem="Tg9-Oo-57L" secondAttribute="bottom" constant="1" id="J5T-2q-moT"/>
+                            <constraint firstItem="eOF-VO-Myz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KS0-yp-aDC"/>
+                            <constraint firstItem="bSn-BT-P5k" firstAttribute="top" secondItem="eOF-VO-Myz" secondAttribute="bottom" constant="8" id="LYa-tW-aFv"/>
+                            <constraint firstItem="bSn-BT-P5k" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SPd-NE-Klx"/>
+                            <constraint firstItem="Tg9-Oo-57L" firstAttribute="top" secondItem="j4i-If-Jys" secondAttribute="bottom" constant="25" id="dQ3-hD-tba"/>
+                            <constraint firstItem="j4i-If-Jys" firstAttribute="top" secondItem="bSn-BT-P5k" secondAttribute="bottom" constant="28" id="iwY-48-gpF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="j4i-If-Jys" id="IBG-rp-d9L"/>
+                        <outlet property="resultLabel" destination="cfA-dW-mHP" id="H7d-9q-Fgo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386.5" y="319.5"/>
+        </scene>
+    </scenes>
+</document>

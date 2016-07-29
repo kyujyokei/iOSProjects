@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatsTheNumber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NY4-BW-hsT" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="206"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="What's the Number?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHX-qF-k1O">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="107"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="highlightedColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Guess a number between 1~100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJj-VZ-pZR">
+                                        <rect key="frame" x="0.0" y="106" width="600" height="100"/>
+                                        <color key="backgroundColor" red="0.9450259804725647" green="0.55887049436569214" blue="0.1157599464058876" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="RHX-qF-k1O" firstAttribute="top" secondItem="NY4-BW-hsT" secondAttribute="top" id="2Ll-JE-C5Z"/>
+                                    <constraint firstItem="gJj-VZ-pZR" firstAttribute="width" secondItem="NY4-BW-hsT" secondAttribute="width" id="O71-po-evp"/>
+                                    <constraint firstItem="RHX-qF-k1O" firstAttribute="height" secondItem="NY4-BW-hsT" secondAttribute="height" multiplier="0.6" id="UUx-3C-iOP"/>
+                                    <constraint firstAttribute="bottom" secondItem="gJj-VZ-pZR" secondAttribute="bottom" id="gx6-hp-vme"/>
+                                    <constraint firstItem="RHX-qF-k1O" firstAttribute="width" secondItem="NY4-BW-hsT" secondAttribute="width" id="pI2-r7-X09"/>
+                                    <constraint firstItem="gJj-VZ-pZR" firstAttribute="height" secondItem="NY4-BW-hsT" secondAttribute="height" multiplier="0.4" id="ydg-OC-Aqp"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GpF-d8-zP8" userLabel="Middle View">
+                                <rect key="frame" x="0.0" y="204" width="600" height="223"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thS-PN-P2W">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="148"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="78"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOx-Ku-f4B">
+                                        <rect key="frame" x="0.0" y="151" width="600" height="72"/>
+                                        <color key="backgroundColor" red="0.4613686203956604" green="0.87566500902175903" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <state key="normal" title="Guess!">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="makeGuess:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EB0-jc-aac"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.19691170299999999" green="0.88878984900000002" blue="0.45918099829999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="oOx-Ku-f4B" firstAttribute="height" secondItem="GpF-d8-zP8" secondAttribute="height" multiplier="0.4" id="CyM-nc-6Ta"/>
+                                    <constraint firstItem="thS-PN-P2W" firstAttribute="height" secondItem="GpF-d8-zP8" secondAttribute="height" multiplier="0.6" id="VMM-tr-Nl8"/>
+                                    <constraint firstItem="thS-PN-P2W" firstAttribute="width" secondItem="GpF-d8-zP8" secondAttribute="width" id="XaY-dg-AaE"/>
+                                    <constraint firstItem="thS-PN-P2W" firstAttribute="top" secondItem="GpF-d8-zP8" secondAttribute="top" id="vXL-4l-uam"/>
+                                    <constraint firstAttribute="bottom" secondItem="oOx-Ku-f4B" secondAttribute="bottom" id="x1w-N3-Fsf"/>
+                                    <constraint firstItem="oOx-Ku-f4B" firstAttribute="width" secondItem="GpF-d8-zP8" secondAttribute="width" id="ybO-4e-xkH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.39219798655704702" green="0.87111996644295298" blue="0.1009857382328859" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NY4-BW-hsT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GO0-M3-Dr6"/>
+                            <constraint firstItem="NY4-BW-hsT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JGB-LS-pgl"/>
+                            <constraint firstAttribute="trailing" secondItem="NY4-BW-hsT" secondAttribute="trailing" id="KiP-I8-tZ1"/>
+                            <constraint firstItem="GpF-d8-zP8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" id="L3U-fC-PSs"/>
+                            <constraint firstItem="GpF-d8-zP8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="UNk-0z-cpF"/>
+                            <constraint firstItem="GpF-d8-zP8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YNY-FQ-gd6"/>
+                            <constraint firstItem="NY4-BW-hsT" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gPN-PD-eaX"/>
+                            <constraint firstItem="NY4-BW-hsT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mmh-PB-UU1"/>
+                            <constraint firstItem="NY4-BW-hsT" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1/3" id="qyo-Cm-ibb"/>
+                            <constraint firstItem="NY4-BW-hsT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="uOo-wT-KGI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JGB-LS-pgl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="InputTextField" destination="thS-PN-P2W" id="yjg-yl-y3M"/>
+                        <outlet property="messageLabel" destination="gJj-VZ-pZR" id="yYS-E2-T0K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="386" y="315"/>
+        </scene>
+    </scenes>
+</document>

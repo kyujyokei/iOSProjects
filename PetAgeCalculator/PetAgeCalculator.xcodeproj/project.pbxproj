@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C9096FFC1CC4DA8000E39A60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9096FFB1CC4DA8000E39A60 /* AppDelegate.swift */; };
+		C9096FFE1CC4DA8000E39A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9096FFD1CC4DA8000E39A60 /* ViewController.swift */; };
+		C90970011CC4DA8000E39A60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9096FFF1CC4DA8000E39A60 /* Main.storyboard */; };
+		C90970031CC4DA8000E39A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90970021CC4DA8000E39A60 /* Assets.xcassets */; };
+		C90970061CC4DA8000E39A60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C90970041CC4DA8000E39A60 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C9096FF81CC4DA8000E39A60 /* PetAgeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetAgeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9096FFB1CC4DA8000E39A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C9096FFD1CC4DA8000E39A60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C90970001CC4DA8000E39A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C90970021CC4DA8000E39A60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C90970051CC4DA8000E39A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C90970071CC4DA8000E39A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C9096FF51CC4DA8000E39A60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C9096FEF1CC4DA8000E39A60 = {
+			isa = PBXGroup;
+			children = (
+				C9096FFA1CC4DA8000E39A60 /* PetAgeCalculator */,
+				C9096FF91CC4DA8000E39A60 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C9096FF91CC4DA8000E39A60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C9096FF81CC4DA8000E39A60 /* PetAgeCalculator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C9096FFA1CC4DA8000E39A60 /* PetAgeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				C9096FFB1CC4DA8000E39A60 /* AppDelegate.swift */,
+				C9096FFD1CC4DA8000E39A60 /* ViewController.swift */,
+				C9096FFF1CC4DA8000E39A60 /* Main.storyboard */,
+				C90970021CC4DA8000E39A60 /* Assets.xcassets */,
+				C90970041CC4DA8000E39A60 /* LaunchScreen.storyboard */,
+				C90970071CC4DA8000E39A60 /* Info.plist */,
+			);
+			path = PetAgeCalculator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C9096FF71CC4DA8000E39A60 /* PetAgeCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C909700A1CC4DA8000E39A60 /* Build configuration list for PBXNativeTarget "PetAgeCalculator" */;
+			buildPhases = (
+				C9096FF41CC4DA8000E39A60 /* Sources */,
+				C9096FF51CC4DA8000E39A60 /* Frameworks */,
+				C9096FF61CC4DA8000E39A60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PetAgeCalculator;
+			productName = PetAgeCalculator;
+			productReference = C9096FF81CC4DA8000E39A60 /* PetAgeCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C9096FF01CC4DA8000E39A60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Kero;
+				TargetAttributes = {
+					C9096FF71CC4DA8000E39A60 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = C9096FF31CC4DA8000E39A60 /* Build configuration list for PBXProject "PetAgeCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C9096FEF1CC4DA8000E39A60;
+			productRefGroup = C9096FF91CC4DA8000E39A60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C9096FF71CC4DA8000E39A60 /* PetAgeCalculator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C9096FF61CC4DA8000E39A60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C90970061CC4DA8000E39A60 /* LaunchScreen.storyboard in Resources */,
+				C90970031CC4DA8000E39A60 /* Assets.xcassets in Resources */,
+				C90970011CC4DA8000E39A60 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C9096FF41CC4DA8000E39A60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9096FFE1CC4DA8000E39A60 /* ViewController.swift in Sources */,
+				C9096FFC1CC4DA8000E39A60 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C9096FFF1CC4DA8000E39A60 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C90970001CC4DA8000E39A60 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C90970041CC4DA8000E39A60 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C90970051CC4DA8000E39A60 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C90970081CC4DA8000E39A60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C90970091CC4DA8000E39A60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C909700B1CC4DA8000E39A60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PetAgeCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kero.PetAgeCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C909700C1CC4DA8000E39A60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PetAgeCalculator/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kero.PetAgeCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C9096FF31CC4DA8000E39A60 /* Build configuration list for PBXProject "PetAgeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C90970081CC4DA8000E39A60 /* Debug */,
+				C90970091CC4DA8000E39A60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C909700A1CC4DA8000E39A60 /* Build configuration list for PBXNativeTarget "PetAgeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C909700B1CC4DA8000E39A60 /* Debug */,
+				C909700C1CC4DA8000E39A60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C9096FF01CC4DA8000E39A60 /* Project object */;
+}
