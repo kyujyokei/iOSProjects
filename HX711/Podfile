@@ -1,0 +1,31 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'HX711' do
+  # Comment this line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+    pod 'Firebase', '>= 2.5.1'
+    pod 'Firebase/Database'
+
+  # Pods for HX711
+
+  target 'HX711Tests' do
+    inherit! :search_paths
+    # Pods for testing
+
+    pod 'Firebase', '>= 2.5.1'
+    pod 'Firebase/Database'
+
+  end
+
+  target 'HX711UITests' do
+    inherit! :search_paths
+    # Pods for testing
+
+    pod 'Firebase', '>= 2.5.1'
+    pod 'Firebase/Database'
+
+  end
+
+end

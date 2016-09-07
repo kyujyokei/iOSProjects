@@ -1,0 +1,6 @@
+framework module Pods_HX711 {
+  umbrella header "Pods-HX711-umbrella.h"
+
+  export *
+  module * { export * }
+}
