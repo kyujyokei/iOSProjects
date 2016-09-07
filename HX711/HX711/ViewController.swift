@@ -16,6 +16,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let dRef = rootRef.child("d")
+        dRef.observeEventType(.Value) { ( snap:FIRDataSnapshot) in
+            
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
