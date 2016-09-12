@@ -83,6 +83,7 @@
                     <connections>
                         <outlet property="emailTextfield" destination="MS4-ty-Bup" id="oaE-Bl-ZlF"/>
                         <outlet property="passwordTextfield" destination="8d6-Vv-Smj" id="hWw-jG-pg6"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goNext" id="zJi-Zc-vDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RHo-AT-OiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,12 +124,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="dataTable" destination="YjE-AE-cGm" id="Xgt-1g-r2K"/>
+                        <outlet property="tableView" destination="YjE-AE-cGm" id="YCR-AY-LiS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049" y="97"/>
+            <point key="canvasLocation" x="1170" y="89"/>
         </scene>
     </scenes>
 </document>

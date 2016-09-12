@@ -19,6 +19,9 @@
 		C964C2001D7FEF2C00A7E3BF /* HX711UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964C1FF1D7FEF2C00A7E3BF /* HX711UITests.swift */; };
 		C964C20E1D7FF17200A7E3BF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C964C20D1D7FF17200A7E3BF /* GoogleService-Info.plist */; };
 		C964C2101D7FFEA900A7E3BF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964C20F1D7FFEA900A7E3BF /* LoginController.swift */; };
+		C964C2161D800BA600A7E3BF /* MeasurementHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964C2151D800BA600A7E3BF /* MeasurementHelper.swift */; };
+		C964C2181D800BCA00A7E3BF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964C2171D800BCA00A7E3BF /* AppState.swift */; };
+		C964C21A1D800BEF00A7E3BF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C964C2191D800BEF00A7E3BF /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		C964C2011D7FEF2C00A7E3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C964C20D1D7FF17200A7E3BF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C964C20F1D7FFEA900A7E3BF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C964C2151D800BA600A7E3BF /* MeasurementHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MeasurementHelper.swift; path = ../MeasurementHelper.swift; sourceTree = "<group>"; };
+		C964C2171D800BCA00A7E3BF /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		C964C2191D800BEF00A7E3BF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D09EBDE72770A99B05CE677A /* Pods_HX711Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HX711Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D398581BF855B1FF9F9B82BA /* Pods-HX711UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HX711UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HX711UITests/Pods-HX711UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,9 +152,12 @@
 				C964C1E31D7FEF2C00A7E3BF /* Main.storyboard */,
 				C964C20F1D7FFEA900A7E3BF /* LoginController.swift */,
 				C964C1E11D7FEF2C00A7E3BF /* ViewController.swift */,
+				C964C2151D800BA600A7E3BF /* MeasurementHelper.swift */,
 				C964C1E61D7FEF2C00A7E3BF /* Assets.xcassets */,
 				C964C1E81D7FEF2C00A7E3BF /* LaunchScreen.storyboard */,
 				C964C1EB1D7FEF2C00A7E3BF /* Info.plist */,
+				C964C2171D800BCA00A7E3BF /* AppState.swift */,
+				C964C2191D800BEF00A7E3BF /* Constants.swift */,
 			);
 			path = HX711;
 			sourceTree = "<group>";
@@ -434,9 +443,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C964C2161D800BA600A7E3BF /* MeasurementHelper.swift in Sources */,
+				C964C2181D800BCA00A7E3BF /* AppState.swift in Sources */,
 				C964C1E21D7FEF2C00A7E3BF /* ViewController.swift in Sources */,
 				C964C2101D7FFEA900A7E3BF /* LoginController.swift in Sources */,
 				C964C1E01D7FEF2C00A7E3BF /* AppDelegate.swift in Sources */,
+				C964C21A1D800BEF00A7E3BF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
