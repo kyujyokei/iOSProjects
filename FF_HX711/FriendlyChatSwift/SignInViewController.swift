@@ -28,6 +28,9 @@ class SignInViewController: UIViewController {
     if let user = FIRAuth.auth()?.currentUser {
       self.signedIn(user)
     }
+    emailField.text = "kyujyokei@gmail.com"
+    passwordField.text = "effort"
+    
   }
 
   @IBAction func didTapSignIn(sender: AnyObject) {
