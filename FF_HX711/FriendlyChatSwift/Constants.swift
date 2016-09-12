@@ -26,8 +26,9 @@ struct Constants {
   }
 
   struct MessageFields {
-    static let name = "name"
-    static let text = "text"
+    static let date = "date"
+    static let time = "time"
+    static let weight = "weight"
     static let photoUrl = "photoUrl"
     static let imageUrl = "imageUrl"
   }

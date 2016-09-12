@@ -1,4 +1,6 @@
 PODS:
+  - Firebase (3.3.0):
+    - Firebase/Core (= 3.3.0)
   - Firebase/AdMob (3.3.0):
     - Firebase/Analytics (= 3.3.0)
     - Google-Mobile-Ads-SDK (= 7.8.1)
@@ -7,6 +9,8 @@ PODS:
   - Firebase/Auth (3.3.0):
     - Firebase/Analytics (= 3.3.0)
     - FirebaseAuth (= 3.0.3)
+  - Firebase/Core (3.3.0):
+    - Firebase/Analytics (= 3.3.0)
   - Firebase/Crash (3.3.0):
     - Firebase/Analytics (= 3.3.0)
     - FirebaseCrash (= 1.0.6)
@@ -64,6 +68,7 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Crash
@@ -88,6 +93,6 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
 
-PODFILE CHECKSUM: 46da9802bad1e755bb1f027a32f660dce9d6398c
+PODFILE CHECKSUM: 23ae1130e1ffbd4def1ddae2fd748439cc3edf4a
 
 COCOAPODS: 1.0.1

@@ -37,7 +37,7 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
   var ref: FIRDatabaseReference!
   var messages: [FIRDataSnapshot]! = []
   var msglength: NSNumber = 10
-  private var _refHandle: FIRDatabaseHandle!
+  var _refHandle: FIRDatabaseHandle!
 
   var storageRef: FIRStorageReference!
   var remoteConfig: FIRRemoteConfig!
@@ -70,8 +70,6 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
       self.messages.append(snapshot)
       self.clientTable.insertRowsAtIndexPaths([NSIndexPath(forRow: self.messages.count-1, inSection: 0)], withRowAnimation: .Automatic)
     })
-    print(messages)
-    print(messages.count)
   }
 
   func configureStorage() {
@@ -152,11 +150,11 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     // Dequeue cell
-    let cell: UITableViewCell! = self.clientTable .dequeueReusableCellWithIdentifier("tableViewCell", forIndexPath: indexPath)
+    let cell: UITableViewCell! = self.clientTable.dequeueReusableCellWithIdentifier("ClientCell", forIndexPath: indexPath)
     // Unpack message from Firebase DataSnapshot
     let messageSnapshot: FIRDataSnapshot! = self.messages[indexPath.row]
     let message = messageSnapshot.value as! Dictionary<String, String>
-    let name = message[Constants.MessageFields.name] as String!
+    let date = message[Constants.MessageFields.date] as String!
     if let imageUrl = message[Constants.MessageFields.imageUrl] {
       if imageUrl.hasPrefix("gs://") {
         FIRStorage.storage().referenceForURL(imageUrl).dataWithMaxSize(INT64_MAX){ (data, error) in
@@ -169,10 +167,10 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
       } else if let url = NSURL(string:imageUrl), data = NSData(contentsOfURL: url) {
         cell.imageView?.image = UIImage.init(data: data)
       }
-      cell!.textLabel?.text = "sent by: \(name)"
+      cell!.textLabel?.text = "sent by: \(date)"
     } else {
-      let text = message[Constants.MessageFields.text] as String!
-      cell!.textLabel?.text = name + ": " + text
+      let text = message[Constants.MessageFields.weight] as String!
+      cell!.textLabel?.text = date + ": " + text
       cell!.imageView?.image = UIImage(named: "ic_account_circle")
       if let photoUrl = message[Constants.MessageFields.photoUrl], url = NSURL(string:photoUrl), data = NSData(contentsOfURL: url) {
         cell!.imageView?.image = UIImage(data: data)
@@ -183,14 +181,14 @@ class FCViewController: UIViewController, UITableViewDataSource, UITableViewDele
 
   // UITextViewDelegate protocol methods
   func textFieldShouldReturn(textField: UITextField) -> Bool {
-    let data = [Constants.MessageFields.text: textField.text! as String]
+    let data = [Constants.MessageFields.weight: textField.text! as String]
     sendMessage(data)
     return true
   }
 
   func sendMessage(data: [String: String]) {
     var mdata = data
-    mdata[Constants.MessageFields.name] = AppState.sharedInstance.displayName
+    mdata[Constants.MessageFields.date] = AppState.sharedInstance.displayName
     if let photoUrl = AppState.sharedInstance.photoUrl {
       mdata[Constants.MessageFields.photoUrl] = photoUrl.absoluteString
     }

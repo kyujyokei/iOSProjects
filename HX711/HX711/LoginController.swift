@@ -11,9 +11,15 @@ import Firebase
 import FirebaseAuth
 
 class LoginController: UIViewController {
+    
+    var db: FIRDatabaseReference!
+//    let roofRef = FIRDatabase.database().reference()
+    
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    
+    @IBOutlet weak var testLabel: UILabel!
     
     @IBAction func loginButtonAction(sender: UIButton) {
 //        // Sign In with credentials.
@@ -64,10 +70,24 @@ class LoginController: UIViewController {
         
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        db = FIRDatabase.database().reference()
+        
+        let conditionRef = db.child("weight")
+        conditionRef.observeEventType(.Value){ (snap: FIRDataSnapshot) in
+            self.testLabel.text = snap.value?.description
+        }
+        
+    }
+    
     override func viewDidAppear(animated: Bool) {
 //        if let user = FIRAuth.auth()?.currentUser {
 //            self.signedIn(user)
 //        }
+        
+        
     }
     
     
