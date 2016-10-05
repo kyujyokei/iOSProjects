@@ -8,13 +8,23 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     let player = SKSpriteNode(imageNamed: "playerShip") // init player first for muti function access
     
     // init sfx globally to avoid lag, and move on to the next action right away
     let bulletSound = SKAction.playSoundFileNamed("shooting", waitForCompletion: false)
+    
+    
+    struct PhysicsCategories{
+        static let None : UInt32 = 0
+        static let Player : UInt32 = 0b1 //1
+        static let Bullet : UInt32 = 0b10 //2
+        static let Enemy : UInt32 = 0b100 //4
+    }
+    
+    
     
     
     
@@ -50,6 +60,9 @@ class GameScene: SKScene {
     
     
     override func didMoveToView(view: SKView) { // rus as soon as scene loads up
+        
+        self.physicsWorld.contactDelegate = self
+        
         let background = SKSpriteNode(imageNamed: "background")
         background.size = self.size
         background.position = CGPoint(x: self.size.width/2 , y: self.size.height/2) // set position to the center point of the scene
@@ -59,9 +72,42 @@ class GameScene: SKScene {
         player.setScale(1)
         player.position = CGPoint(x: self.size.width/2 , y: self.size.height * 0.2)
         player.zPosition = 2
+        player.physicsBody = SKPhysicsBody(rectangleOfSize: player.size) // set physics body to player
+        player.physicsBody!.affectedByGravity = false
+        player.physicsBody?.categoryBitMask = PhysicsCategories.Player
+        player.physicsBody?.collisionBitMask = PhysicsCategories.None
+        player.physicsBody?.contactTestBitMask = PhysicsCategories.Enemy
         self.addChild(player)
         
         startNewLevel()
+    }
+    
+    // runs when 2 physics body A contacts with defined type B
+    func didBeginContact(contact: SKPhysicsContact) {
+        
+        var body1 = SKPhysicsBody()
+        var body2 = SKPhysicsBody()
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask{
+            body1 = contact.bodyA
+            body2 = contact.bodyB
+        } else {
+            body1 = contact.bodyB
+            body2 = contact.bodyA
+        }
+        
+        if body1.categoryBitMask == PhysicsCategories.Player && body2.categoryBitMask == PhysicsCategories.Enemy {
+            // if player hit enemy
+            body1.node?.removeFromParent()
+            body2.node?.removeFromParent()
+        }
+        
+        if body1.categoryBitMask == PhysicsCategories.Bullet && body2.categoryBitMask == PhysicsCategories.Enemy{
+            // if bullet hit enemy
+            body1.node?.removeFromParent()
+            body2.node?.removeFromParent()
+        }
+        
     }
     
     
@@ -83,6 +129,11 @@ class GameScene: SKScene {
         bullet.setScale(1)
         bullet.position = player.position // bullets fires where space ship is
         bullet.zPosition = 1
+        bullet.physicsBody = SKPhysicsBody(rectangleOfSize: bullet.size)
+        bullet.physicsBody!.affectedByGravity = false
+        bullet.physicsBody?.categoryBitMask = PhysicsCategories.Bullet
+        bullet.physicsBody?.collisionBitMask = PhysicsCategories.None
+        bullet.physicsBody?.contactTestBitMask = PhysicsCategories.Enemy
         self.addChild(bullet)
         
         // makes the bullet move to top of the screen in 1 sec
@@ -107,6 +158,11 @@ class GameScene: SKScene {
         enemy.setScale(1)
         enemy.position = startPoint
         enemy.zPosition = 2
+        enemy.physicsBody = SKPhysicsBody(rectangleOfSize: enemy.size)
+        enemy.physicsBody!.affectedByGravity = false
+        enemy.physicsBody?.categoryBitMask = PhysicsCategories.Enemy
+        enemy.physicsBody!.collisionBitMask = PhysicsCategories.None
+        enemy.physicsBody?.contactTestBitMask = PhysicsCategories.Player | PhysicsCategories.Bullet
         self.addChild(enemy)
         
         let moveEnemy = SKAction.moveTo(endPoint, duration: 1.5)
