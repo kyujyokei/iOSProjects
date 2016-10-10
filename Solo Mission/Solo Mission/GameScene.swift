@@ -10,12 +10,20 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
+    var gameScore = 0 // keeps track of the score
+    let scoreLabel = SKLabelNode(fontNamed: "Hiruko Black Alternate")
+    
+    var livesNumber = 3
+    let livesLabel = SKLabelNode(fontNamed: "Hiruko Black Alternate")
+    
+    var levelNumber = 0
+    
     
     let player = SKSpriteNode(imageNamed: "playerShip") // init player first for muti function access
     
     // init sfx globally to avoid lag, and move on to the next action right away
     let bulletSound = SKAction.playSoundFileNamed("shooting", waitForCompletion: false)
-    
+    let explosionSound = SKAction.playSoundFileNamed("explosion", waitForCompletion: false)
     
     struct PhysicsCategories{
         static let None : UInt32 = 0
@@ -80,7 +88,61 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(player)
         
         startNewLevel()
+        
+        scoreLabel.text = "Score:0"
+        scoreLabel.fontSize = 70
+        scoreLabel.fontColor = SKColor.whiteColor()
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        scoreLabel.position = CGPoint(x: self.size.width*0.15 , y: self.size.height*0.9 )
+        scoreLabel.zPosition = 100 // always on the very top
+        self.addChild(scoreLabel)
+        
+        livesLabel.text = "Lives: 3"
+        livesLabel.fontSize = 70
+        livesLabel.fontColor = SKColor.whiteColor()
+        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Right
+        livesLabel.position = CGPoint(x: self.size.width*0.85 , y: self.size.height*0.9 )
+        livesLabel.zPosition = 100 // always on the very top
+        self.addChild(livesLabel)
+
     }
+    
+    func loseALife(){
+        
+        livesNumber -= 1
+        livesLabel.text = "Lives: \(livesNumber)"
+        
+        let scaleUp = SKAction.scaleTo(1.5, duration: 0.2)
+        let scaleDown = SKAction.scaleTo(1, duration: 0.2)
+        let scaleSequence = SKAction.sequence([scaleUp,scaleDown])
+        livesLabel.runAction(scaleSequence)
+        
+        if livesNumber == 0 {
+            runGameOver()
+        }
+        
+    }
+    
+    
+    func addScore(){
+        
+        gameScore += 1
+        scoreLabel.text = "Score: \(gameScore)"
+        
+        if gameScore == 10 || gameScore == 25 || gameScore == 50 {
+            startNewLevel()
+        }
+    
+    }
+    
+    
+    func runGameOver(){
+        
+        
+    
+    }
+    
+    
     
     // runs when 2 physics body A contacts with defined type B
     func didBeginContact(contact: SKPhysicsContact) {
@@ -98,12 +160,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if body1.categoryBitMask == PhysicsCategories.Player && body2.categoryBitMask == PhysicsCategories.Enemy {
             // if player hit enemy
+            
+            if body1.node != nil{
+            spawnExplosion(body1.node!.position)
+            }
+            if body2.node != nil{
+            spawnExplosion(body2.node!.position)
+            }
+                
             body1.node?.removeFromParent()
             body2.node?.removeFromParent()
+            
+            runGameOver()
         }
         
-        if body1.categoryBitMask == PhysicsCategories.Bullet && body2.categoryBitMask == PhysicsCategories.Enemy{
+        if body1.categoryBitMask == PhysicsCategories.Bullet && body2.categoryBitMask == PhysicsCategories.Enemy && body2.node?.position.y < self.size.height {
             // if bullet hit enemy
+            
+            addScore()
+            
+            if body2.node != nil{
+            spawnExplosion(body2.node!.position)
+            }
+                
             body1.node?.removeFromParent()
             body2.node?.removeFromParent()
         }
@@ -111,13 +190,50 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
+    func spawnExplosion(spawnPosition:CGPoint){
+        
+        let explosion = SKSpriteNode(imageNamed: "explosion")
+        explosion.position = spawnPosition
+        explosion.zPosition = 3
+        explosion.setScale(0) // start very small
+        self.addChild(explosion)
+    
+        let scaleIn = SKAction.scaleTo(1, duration: 0.1)
+        let fadeOut = SKAction.fadeOutWithDuration(0.1)
+        let delete = SKAction.removeFromParent()
+        let explosionSequence = SKAction.sequence([explosionSound,scaleIn,fadeOut,delete])
+        
+        explosion.runAction(explosionSequence)
+        
+    }
+    
+    
     func startNewLevel(){
+        
+        levelNumber += 1
+        
+        if self.actionForKey("spawningEnemies") != nil {
+            self.removeActionForKey("spawningEnemies")
+        }
+        
+        var levelDuration = NSTimeInterval()
+        
+        switch levelNumber {
+        case 1: levelDuration = 1.2
+        case 2: levelDuration = 1.0
+        case 3: levelDuration = 0.8
+        case 4: levelDuration = 0.5
+        default:
+            levelDuration = 0.5
+            print("Cannot find level info")
+        
+        }
     
         let spawn = SKAction.runBlock(spawnEnemy)
-        let waitToSpawn = SKAction.waitForDuration(1)
-        let spawnSequence = SKAction.sequence([spawn,waitToSpawn])
+        let waitToSpawn = SKAction.waitForDuration(levelDuration)
+        let spawnSequence = SKAction.sequence([waitToSpawn,spawn])
         let spawnForever = SKAction.repeatActionForever(spawnSequence)
-        self.runAction(spawnForever)
+        self.runAction(spawnForever, withKey: "spawningEnemies")
     
     }
     
@@ -167,7 +283,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let moveEnemy = SKAction.moveTo(endPoint, duration: 1.5)
         let deleteEnemy = SKAction.removeFromParent()
-        let enemySequence = SKAction.sequence([moveEnemy,deleteEnemy])
+        let loseALifeAction = SKAction.runBlock(loseALife)
+        let enemySequence = SKAction.sequence([moveEnemy,deleteEnemy,loseALifeAction])
         enemy.runAction(enemySequence)
         
         let dx = endPoint.x - startPoint.x

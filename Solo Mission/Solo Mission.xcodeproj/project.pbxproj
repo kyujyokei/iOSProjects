@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C90180841DA50683006D9B68 /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = C90180831DA50683006D9B68 /* explosion.wav */; };
+		C98235F71DA92AF600C4450B /* HirukoBlackAlternate.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C98235F61DA92AF600C4450B /* HirukoBlackAlternate.ttf */; };
 		C98E42631D9A338E004F412F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E42621D9A338E004F412F /* AppDelegate.swift */; };
 		C98E42651D9A338E004F412F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C98E42641D9A338E004F412F /* GameScene.sks */; };
 		C98E42671D9A338E004F412F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E42661D9A338E004F412F /* GameScene.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C90180831DA50683006D9B68 /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
+		C98235F61DA92AF600C4450B /* HirukoBlackAlternate.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HirukoBlackAlternate.ttf; sourceTree = "<group>"; };
 		C98E425F1D9A338E004F412F /* Solo Mission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solo Mission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C98E42621D9A338E004F412F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C98E42641D9A338E004F412F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -109,6 +113,8 @@
 				C98E42681D9A338E004F412F /* GameViewController.swift */,
 				C98E426A1D9A338E004F412F /* Main.storyboard */,
 				C98E42941D9A48AF004F412F /* shooting.wav */,
+				C90180831DA50683006D9B68 /* explosion.wav */,
+				C98235F61DA92AF600C4450B /* HirukoBlackAlternate.ttf */,
 				C98E426D1D9A338E004F412F /* Assets.xcassets */,
 				C98E426F1D9A338E004F412F /* LaunchScreen.storyboard */,
 				C98E42721D9A338E004F412F /* Info.plist */,
@@ -238,7 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90180841DA50683006D9B68 /* explosion.wav in Resources */,
 				C98E42651D9A338E004F412F /* GameScene.sks in Resources */,
+				C98235F71DA92AF600C4450B /* HirukoBlackAlternate.ttf in Resources */,
 				C98E42711D9A338E004F412F /* LaunchScreen.storyboard in Resources */,
 				C98E42951D9A48AF004F412F /* shooting.wav in Resources */,
 				C98E426E1D9A338E004F412F /* Assets.xcassets in Resources */,
@@ -502,6 +510,7 @@
 				C98E428D1D9A338E004F412F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C98E428E1D9A338E004F412F /* Build configuration list for PBXNativeTarget "Solo MissionTests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +519,7 @@
 				C98E42901D9A338E004F412F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C98E42911D9A338E004F412F /* Build configuration list for PBXNativeTarget "Solo MissionUITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +528,7 @@
 				C98E42931D9A338E004F412F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
