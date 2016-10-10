@@ -25,14 +25,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let bulletSound = SKAction.playSoundFileNamed("shooting", waitForCompletion: false)
     let explosionSound = SKAction.playSoundFileNamed("explosion", waitForCompletion: false)
     
+    enum gameState{
+        case preGame //  before game starts
+        case inGame // during the game
+        case afterGame // when game's finished
+    }
+    
+    var currentGameState = gameState.inGame
+    
     struct PhysicsCategories{
         static let None : UInt32 = 0
         static let Player : UInt32 = 0b1 //1
         static let Bullet : UInt32 = 0b10 //2
         static let Enemy : UInt32 = 0b100 //4
     }
-    
-    
     
     
     
@@ -138,7 +144,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func runGameOver(){
         
+        currentGameState = gameState.afterGame
         
+        self.removeAllActions()
+        
+        self.enumerateChildNodesWithName("Bullet"){ // generate a list of all the objects with the name "Bullet"
+            bullet, stop in // call each bullet
+            bullet.removeAllActions()
+        }
+        
+        self.enumerateChildNodesWithName("Enemy"){
+            enemy, stop in
+            enemy.removeAllActions()
+        }
     
     }
     
@@ -242,6 +260,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func fireBullet() {
         
         let bullet = SKSpriteNode(imageNamed: "bullet")
+        bullet.name = "Bullet" // reference name
         bullet.setScale(1)
         bullet.position = player.position // bullets fires where space ship is
         bullet.zPosition = 1
@@ -271,6 +290,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let endPoint = CGPoint(x: randomXEnd, y: -self.size.height * 0.2)
         
         let enemy = SKSpriteNode(imageNamed: "enemyShip")
+        enemy.name = "Enemy"
         enemy.setScale(1)
         enemy.position = startPoint
         enemy.zPosition = 2
@@ -297,7 +317,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        fireBullet()
+        if currentGameState == gameState.inGame{
+            fireBullet()
+        }
     }
     
     
@@ -311,7 +333,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
             let amountDragged = pointOfTouch.x - previousPointOfTouch.x // calculate movement
             
-            player.position.x += amountDragged
+            if currentGameState == gameState.inGame{
+                player.position.x += amountDragged // moves spaceship when dragged
+            }
             
             // if the player exceeds game area
             if player.position.x > CGRectGetMaxX(gameArea) - player.size.width/2 {
