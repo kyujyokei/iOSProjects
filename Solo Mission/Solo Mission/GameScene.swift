@@ -91,6 +91,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             background.position = CGPoint(x: self.size.width/2 ,
                                           y: self.size.height*CGFloat(i)) // set different coordinates for 2 bgs
             background.zPosition = 0 // put it in the lowest layer
+            background.name = "Background"
             self.addChild(background)
             
         }
@@ -140,8 +141,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var lastUpdateTime:NSTimeInterval = 0 // stores time of the last frame to calculate delta time
     var deltaFrameTime:NSTimeInterval = 0
-    var amountToMovePerSec : CGFloat = 600.0
+    var amountToMovePerSec : CGFloat = 100.0
     
+    
+    // this part of the code makes sure background moves at the same pace regardless the fps fluctuates
     override func update(currentTime: NSTimeInterval) { // runs once per frame
         
         if lastUpdateTime == 0{ // first time running
@@ -151,6 +154,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             lastUpdateTime = currentTime
         }
         
+        let amountToMoveBackground = amountToMovePerSec * CGFloat(deltaFrameTime)
+        self.enumerateChildNodesWithName("Background"){ // effects both backgrounds
+            background, stop in
+            
+            if self.currentGameState == gameState.inGame {
+                background.position.y -= amountToMoveBackground
+                
+                if background.position.y < -self.size.height{
+                    background.position.y += self.size.height*2
+                }
+                
+            }
+        }
         
     }
     
